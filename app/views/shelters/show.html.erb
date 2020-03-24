@@ -8,3 +8,10 @@
 <%= button_to "View Pets", "/shelters/#{@shelter.id}/pets", method: :get %>
 <%= button_to "Edit Shelter", "/shelters/#{@shelter.id}/edit", method: :get %>
 <%= button_to "Remove Shelter", "/shelters/#{@shelter.id}", method: :delete %>
+
+<% @shelter.reviews.each do |review|%>
+<h2>Review Name: <%= review.title %></h2>
+<h3>Review Content: <%= review.content %></h3>
+<h3>Review Rating: <%= review.rating %></h3>
+<img style="width:40vw" src="<%= review.image %>">
+<%end%>

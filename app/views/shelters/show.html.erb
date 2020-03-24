@@ -1,0 +1,10 @@
+<h1><%= @shelter.name %></h1>
+
+<h3><%= @shelter.address %>
+<h3><%= @shelter.city %>
+<h3><%= @shelter.state %>
+<h3><%= @shelter.zip %><br>
+
+<%= button_to "View Pets", "/shelters/#{@shelter.id}/pets", method: :get %>
+<%= button_to "Edit Shelter", "/shelters/#{@shelter.id}/edit", method: :get %>
+<%= button_to "Remove Shelter", "/shelters/#{@shelter.id}", method: :delete %>

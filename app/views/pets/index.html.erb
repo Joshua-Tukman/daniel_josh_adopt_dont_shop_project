@@ -1,0 +1,16 @@
+<h1>Pets</h1>
+
+<% @pets.each do |pet|%>
+    <h2>Name: <%= link_to "#{pet.name}", "/pets/#{pet.id}", method: :get %></h2>
+    <img style="width:40vw" src="<%= pet.image %>">
+    <h3>Age: <%= pet.age %></h3>
+    <h3>Sex: <%= pet.sex %></h3>
+    <h3>Shelter: <%=link_to "#{pet.shelter.name}", "/shelters/#{pet.shelter.id}", method: :get %></h3>
+    <h2><%= button_to "Update Pet Info", "/pets/#{pet.id}/edit", method: :get %></h2>
+    <h2><%= button_to "Delete Pet", "/pets/#{pet.id}", method: :delete %></h2><hr>
+
+<% end %>
+
+
+
+    

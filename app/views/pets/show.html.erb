@@ -3,6 +3,7 @@
     <h3>Age: <%= @pet.age  %></h3>
     <h3>Sex: <%= @pet.sex  %></h3>
     <h3>Status: <%= @pet.adoptable? %></h3>
+    <h3>Status: <%= @pet.description %></h3>
     
 <%= button_to "Update Pet Info", "/pets/#{@pet.id}/edit", method: :get %>
 <%= button_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %>

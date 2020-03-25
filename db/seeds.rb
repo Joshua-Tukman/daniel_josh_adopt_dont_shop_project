@@ -48,8 +48,8 @@ pet3 = shelter3.pets.create(name: "Karen",
 review1 = shelter1.reviews.create!(title: "Great Place",
                                 rating: 9,
                                 content: "Very friendly staff",
-                                image: "https://images.freeimages.com/images/large-previews/5ae/grape-vine-leaf-1327453.jpg")
+                                image: "https://images.freeimages.com/images/small-previews/d21/hi-me-1407590.jpg")
 review2 = shelter1.reviews.create!(title: "Just ok",
                                 rating: 4,
-                                content: "Ugly pets")
-                                #image: "https://images.freeimages.com/images/large-previews/5ae/grape-vine-leaf-1327453.jpg")
+                                content: "Ugly pets",
+                                image: "https://images.freeimages.com/images/large-previews/3a2/hyena-1386682.jpg")

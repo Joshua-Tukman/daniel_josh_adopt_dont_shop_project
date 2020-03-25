@@ -16,7 +16,7 @@ RSpec.describe "shelter show page" do
             review2 = shelter1.reviews.create!(title: "Just ok",
                                             rating: 4,
                                             content: "Ugly pets",
-                                            image: "https://images.freeimages.com/images/large-previews/5ae/grape-vine-leaf-1327453.jpg")
+                                            image: "https://images.freeimages.com/images/large-previews/3a2/hyena-1386682.jpg")
 
             visit "/shelters/#{shelter1.id}"
 
@@ -25,8 +25,7 @@ RSpec.describe "shelter show page" do
                 expect(page).to have_content(review1.title)
                 expect(page).to have_content(review1.rating)
                 expect(page).to have_content(review1.content)
-                #expect(page).to have_css("https://images.freeimages.com/images/large-previews/5ae/grape-vine-leaf-1327453.jpg")
-
+                expect(page).to have_css("img[src*='https://images.freeimages.com/images/large-previews/5ae/grape-vine-leaf-1327453.jpg']")
             end
 
             within "#review-#{review2.id}" do
@@ -34,7 +33,8 @@ RSpec.describe "shelter show page" do
                 expect(review2.title).to eq("Just ok")
                 expect(page).to have_content(review2.rating)
                 expect(review2.content).to eq("Ugly pets")
-                #expect(page).to have_content("https://images.freeimages.com/images/large-previews/5ae/grape-vine-leaf-1327453.jpg")
+                expect(page).to have_css("img[src*='https://images.freeimages.com/images/large-previews/3a2/hyena-1386682.jpg']")
+
 
             end
         end

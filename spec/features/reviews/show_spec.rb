@@ -34,8 +34,6 @@ RSpec.describe "shelter show page" do
                 expect(page).to have_content(review2.rating)
                 expect(review2.content).to eq("Ugly pets")
                 expect(page).to have_css("img[src*='https://images.freeimages.com/images/large-previews/3a2/hyena-1386682.jpg']")
-
-
             end
         end
     end

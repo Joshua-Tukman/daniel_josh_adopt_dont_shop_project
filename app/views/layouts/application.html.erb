@@ -8,6 +8,10 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
+  <nav>
+    <%= button_to "Back to Shelters", "/shelters", method: :get %>
+  </nav>
+
   <% flash.each do |type, message| %>
 	<p><%= message %> </p>
 <% end %>

@@ -25,6 +25,8 @@ RSpec.describe "shelter review new page", type: :feature do
 
       expect(current_path).to eq("/shelters/#{shelter1.id}")
       expect(page).to have_content("Bongo")
+      expect(page).to have_content(7)
+      expect(page).to have_content("example text")
     end
 
     it "will return error message if missing fields" do
@@ -47,7 +49,7 @@ RSpec.describe "shelter review new page", type: :feature do
 
       click_on "Create Review"
 
-      expect(current_path).to eq("/shelters/#{shelter1.id}/reviews")
+      expect(current_path).to eq("/shelters/#{shelter1.id}/reviews/new")
       expect(page).to have_content("Please fill title, rating and conent!")
     end
   end

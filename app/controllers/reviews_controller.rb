@@ -11,9 +11,29 @@ class ReviewsController < ApplicationController
         redirect_to "/shelters/#{@shelter.id}"
       else
         flash[:notice] = "Please fill title, rating and conent!"
-        render :new
+        redirect_to "/shelters/#{@shelter.id}/reviews/new"
+        # render :new
       end
   end
+
+  def edit
+    # @shelter = Shelter.find(params[:shelter_id])
+    @review = Review.find(params[:review_id])
+  end
+
+  def update
+    # binding.pry
+    # @shelter = Shelter.find(params[:shelter_id])
+    @review = Review.find(params[:review_id])
+    @review.update(review_params)
+      if @review.save
+        redirect_to "/shelters/#{@review.shelter.id}"
+      else
+        flash[:notice] = "Please fill title, rating and conent!"
+        render :edit
+      end
+  end
+  
 
   private
 
@@ -21,3 +41,5 @@ class ReviewsController < ApplicationController
     params.permit(:title, :content, :rating, :image)
   end
 end
+
+# flash[:notice] = review.errors.full_messages.to_sentence]

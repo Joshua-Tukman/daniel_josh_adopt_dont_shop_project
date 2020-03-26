@@ -9,6 +9,11 @@ RSpec.describe "delete a shelter", type: :feature do
                                     city: 'Denver',
                                     state: 'Colorado',
                                     zip: '80220')
+            shelter2 = Shelter.create(name: 'Bill',
+                                    address: '123 Street',
+                                    city: 'Denver',
+                                    state: 'Colorado',
+                                    zip: '80220')
         
             visit "/shelters/#{shelter1.id}"
 

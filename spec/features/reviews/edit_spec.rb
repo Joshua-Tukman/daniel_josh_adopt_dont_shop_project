@@ -46,7 +46,7 @@ RSpec.describe "shelter review edit page" do
                 expect(review1.title).to eq("Bad Place") 
                 expect(review1.rating).to eq(1) 
                 expect(review1.content).to eq("Rude staff") 
-                # expect(review1.image).to have_css("img[src*= 'https://images.freeimages.com/images/large-previews/05e/on-the-road-6-1384796.jpg']")
+                # expect(page).to have_css("img[src*= 'https://images.freeimages.com/images/large-previews/05e/on-the-road-6-1384796.jpg']")
             end
         end    
     end

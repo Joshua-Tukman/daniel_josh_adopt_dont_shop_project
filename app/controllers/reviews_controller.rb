@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   def new
     @shelter = Shelter.find(params[:shelter_id])
   end
-
+# binding.pry
   def create
     @shelter = Shelter.find(params[:shelter_id])
     new_review = @shelter.reviews.new(review_params)
@@ -11,8 +11,8 @@ class ReviewsController < ApplicationController
         redirect_to "/shelters/#{@shelter.id}"
       else
         flash[:notice] = "Please fill title, rating and conent!"
-        redirect_to "/shelters/#{@shelter.id}/reviews/new"
-        # render :new
+        # redirect_to "/shelters/#{@shelter.id}/reviews/new"
+        render :new
       end
   end
 

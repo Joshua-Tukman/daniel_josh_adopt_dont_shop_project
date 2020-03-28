@@ -18,6 +18,7 @@
 <h3>Review Rating: <%= review.rating %></h3>
 <img style="width:40vw" src="<%= review.image %>">
 <%= button_to "Update Review", "/reviews/#{review.id}/edit", method: :get %>
+<%= button_to "Delete Review", "/reviews/#{review.id}", method: :delete %>
 
 </section>
 <%end%>

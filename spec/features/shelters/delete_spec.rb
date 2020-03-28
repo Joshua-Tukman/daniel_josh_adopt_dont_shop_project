@@ -11,7 +11,7 @@ RSpec.describe "delete a shelter", type: :feature do
                                     zip: '80220')
         
             visit "/shelters/#{shelter1.id}"
-
+# save_and_open_page
             click_on "Remove Shelter"
 
             expect(current_path).to eq("/shelters") 

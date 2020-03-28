@@ -23,12 +23,13 @@ RSpec.describe "pet update page", type: :feature do
             expect(current_path).to eq("/pets/#{pet1.id}/edit") 
 
             fill_in "name",	with: "Hector" 
-            # fill_in "image", with: "" 
+            fill_in "image", with: "https://images.freeimages.com/images/large-previews/5ae/grape-vine-leaf-1327453.jpg" 
             fill_in "age",	with: 9 
             fill_in "sex",	with: "male"
             fill_in "description",	with: "banana" 
 
             click_on "Update Pet"
+            pet1.reload
 
             expect(current_path).to eq("/pets/#{pet1.id}") 
             # binding.pry

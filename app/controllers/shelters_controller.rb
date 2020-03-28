@@ -5,11 +5,13 @@ class SheltersController < ApplicationController
     end
 
     def new
-        
+
     end
 
     def show
+# binding.pry
         @shelter = Shelter.find(params[:id])
+      
     end
 
     def create
@@ -33,15 +35,15 @@ class SheltersController < ApplicationController
         Shelter.destroy(params[:id])
         redirect_to "/shelters"
     end
-    
-    
-    
+
+
+
 
     private
     def shelter_params
       params.permit(:name, :address, :city, :state, :zip)
     end
-    
-    
-    
-end 
+
+
+
+end

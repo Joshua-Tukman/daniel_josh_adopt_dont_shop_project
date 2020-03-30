@@ -1,0 +1,7 @@
+<h1>All pets you have favorited</h1>
+
+<% @favorite_pets.each do |pet_id, value| %>
+  <section id="Pet-<%=pet_id %>">
+    <%= Pet.find(pet_id).name %>
+  </section>
+<%end%>

@@ -29,7 +29,7 @@ class ReviewsController < ApplicationController
       if @review.save
         redirect_to "/shelters/#{@review.shelter.id}"
       else
-        flash[:notice] = "Please fill title, rating and conent!"
+        flash[:notice] = "Please fill title, rating and content!"
         render :edit
       end
   end
@@ -39,8 +39,8 @@ class ReviewsController < ApplicationController
     Review.destroy(params[:review_id])
     redirect_to "/shelters/#{review.shelter.id}"
   end
-  
-  
+
+
 
   private
 

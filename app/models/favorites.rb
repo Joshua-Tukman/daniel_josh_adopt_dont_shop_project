@@ -20,7 +20,6 @@ class Favorites
       pet_acc << Pet.find(pet_id)
     end
     pet_acc
-
   end
 
 end

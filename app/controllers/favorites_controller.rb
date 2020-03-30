@@ -8,6 +8,6 @@ class FavoritesController < ApplicationController
   end
 
   def index
-    @pets = Pets.all
+    @pets = Pet.all
   end
 end

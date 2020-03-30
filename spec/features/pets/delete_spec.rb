@@ -15,12 +15,12 @@ RSpec.describe "delete a pet" do
                                     sex: "Male",
                                     description: "sample",
                                     status: true)
-            
-            visit "/pets/#{pet1.id}"
 
+            visit "/pets/#{pet1.id}"
+            
             click_on "Delete Pet"
 
-            expect(current_path).to eq("/pets") 
+            expect(current_path).to eq("/pets")
             expect(page).to_not have_content(pet1.name)
         end
     end

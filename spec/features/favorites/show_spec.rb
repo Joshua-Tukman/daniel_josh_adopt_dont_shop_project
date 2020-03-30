@@ -37,12 +37,12 @@ RSpec.describe "pet's show page" do
       click_button "Add Pet to Favorites"
       expect(page).to have_content("#{pet1.name} has been added to your favorites.")
 
-      expect(page).to have_content("Favorites: 1")
+      expect(page).to have_button("Favorites: 1")
 
       visit "/pets/#{pet2.id}"
       click_button "Add Pet to Favorites"
 
-      expect(page).to have_content("Favorites: 2")
+      expect(page).to have_button("Favorites: 2")
 
     end
   end

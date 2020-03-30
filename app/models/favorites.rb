@@ -14,7 +14,13 @@ class Favorites
   end
 
   def pet_collection
-    @contents.keys
+    pet_acc = []
+    @acc_keys = @contents.keys
+    @acc_keys.each do |pet_id, value|
+      pet_acc << Pet.find(pet_id)
+    end
+    pet_acc
+
   end
 
 end

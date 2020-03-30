@@ -10,7 +10,7 @@
 
   <nav>
     <%= button_to "Back to Shelters", "/shelters", method: :get %>
-    <p>Favorites: <%= favorites.total_count %></p>
+    <%= button_to "Favorites: #{favorites.total_count}", "/favorites", method: :get %>
   </nav>
 
   <% flash.each do |type, message| %>

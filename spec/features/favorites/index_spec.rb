@@ -37,9 +37,39 @@ RSpec.describe "Favorites index page" do
 
     visit "/favorites"
     expect(page).to have_content("#{pet1.name}")
+    expect(page).to have_css("img[src*='#{pet1.image}']")
     expect(page).to have_content("#{pet2.name}")
+    expect(page).to have_css("img[src*='#{pet2.image}']")
+  end
+  it "can take me to the favorites index page when I click the favorite button on any page" do
+    shelter1 = Shelter.create(name: "Poncho's Pointy Pets",
+                                address: "555 Indiana Ave",
+                                city: "Mexico City",
+                                state: "Mexico City",
+                                zip: "01049")
+
+    pet1 = shelter1.pets.create(name: "Alphonso",
+                                image: "https://images.freeimages.com/images/large-previews/d1b/white-tailed-porcupine-1364172.jpg",
+                                age: 3,
+                                sex: "Male",)
+
+    pet2 = shelter1.pets.create(name: "Craig",
+                                image: "https://images.freeimages.com/images/large-previews/6f2/crocodile-1404500.jpg",
+                                age: 48,
+                                sex: "Male")
+
+    visit "/pets/#{pet1.id}"
+    click_button "Add Pet to Favorites"
+
+    visit "/shelters"
+
+    click_button "Favorites: 1"
+
+    expect(current_path).to eq("/favorites")
+
 
   end
+
 end
 
   # As a visitor

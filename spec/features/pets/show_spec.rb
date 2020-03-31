@@ -43,17 +43,16 @@ RSpec.describe "pets show page", type: :feature do
           visit "/pets/#{pet1.id}"
 
           expect(page).to_not have_button("Add Pet to Favorites")
+          expect(page).to have_button("Remove pet from Favorites")
+          click_button "Remove pet from Favorites"
+          expect(current_path).to eq("/pets/#{pet1.id}")
+          expect(page).to have_content("#{pet1.name} has been removed from your Favorites.")
 
         end
     end
 
 end
-# User Story 12, Can't Favorite a Pet More Than Once
-#
-# As a visitor
-# After I've favorited a pet
-# When I visit that pet's show page
-# I no longer see a link to favorite that pet
+
 # But I see a link to remove that pet from my favorites
 # When I click that link
 # A delete request is sent to "/favorites/:pet_id"

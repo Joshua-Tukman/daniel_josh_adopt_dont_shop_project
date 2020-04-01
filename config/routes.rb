@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-
-  get '/', to: 'shelters#index'
-
+  
   #shelters
+  get '/', to: 'shelters#index'
   get '/shelters', to: 'shelters#index'
   get '/shelters/new', to: 'shelters#new'
   post '/shelters', to: 'shelters#create'
@@ -33,4 +32,6 @@ Rails.application.routes.draw do
   #favorites
   patch '/favorites/:pet_id', to: 'favorites#update'
   get '/favorites', to: 'favorites#index'
+  delete '/favorites/:pet_id', to: 'favorites#destroy'
+  delete '/favorites', to: 'favorites#destroy_all'
 end

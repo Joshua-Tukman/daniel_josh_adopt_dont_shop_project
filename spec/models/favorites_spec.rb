@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Favorites do
+RSpec.describe Favorites, type: :model do
 
   describe "#total_count" do
     it "can calculate the total number of items it holds" do

@@ -17,4 +17,9 @@ class FavoritesController < ApplicationController
     flash[:notice] = "#{pet.name} has been removed from your Favorites."
     redirect_to "/pets/#{pet.id}"
   end
+
+  def destroy_all
+    favorites.contents.clear
+    redirect_to "/favorites" 
+  end
 end

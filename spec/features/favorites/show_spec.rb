@@ -24,13 +24,7 @@ RSpec.describe "pet's show page" do
                                   status: true,
                                   description: "May eat your children...")
 
-      pet3 = shelter1.pets.create(name: "Karen",
-                                  image: "https://images.freeimages.com/images/large-previews/161/bird-1383764.jpg",
-                                  age: 7,
-                                  sex: "Female",
-                                  status: true,
-                                  description: "Will want to speak to a manager")
-      visit "/pets/#{pet1.id}"
+    visit "/pets/#{pet1.id}"
 
       expect(page).to have_content(pet1.name)
 
@@ -47,13 +41,3 @@ RSpec.describe "pet's show page" do
     end
   end
 end
-
-# User Story 9, Favorite Creation
-#
-# As a visitor
-# When I visit a pet's show page
-# I see a button or link to favorite that pet
-# When I click the button or link
-# I'm taken back to that pet's show page
-# I see a flash message indicating that the pet has been added to my favorites list
-# The favorite indicator in the nav bar has incremented by one

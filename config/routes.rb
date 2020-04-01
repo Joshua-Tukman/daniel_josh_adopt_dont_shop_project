@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-
-  get '/', to: 'shelters#index'
-
+  
   #shelters
+  get '/', to: 'shelters#index'
   get '/shelters', to: 'shelters#index'
   get '/shelters/new', to: 'shelters#new'
   post '/shelters', to: 'shelters#create'
@@ -36,4 +35,6 @@ Rails.application.routes.draw do
 
   #applications
   get '/applications/new', to: 'applications#new'
+  delete '/favorites/:pet_id', to: 'favorites#destroy'
+  delete '/favorites', to: 'favorites#destroy_all'
 end

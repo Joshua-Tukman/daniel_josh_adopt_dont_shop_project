@@ -1,9 +1,15 @@
 <h1>All pets you have favorited</h1>
 
-<% @acc.each do |pet| %>
-  <section id="Pet-<%=pet.id %>">
-    <h3><%= pet.name%></h3><br>
-    <img style="width:40vw" src="<%= pet.image %>">
-    <%= button_to "Apply to Adopt", "/applications/new", method: :get %>
-  </section>
+<%= button_to "Remove all Favorited Pets", "/favorites", method: :delete %>
+
+<% if @acc.empty?%>
+  <h3>You have no favorited pets.</h3>
+<%else%>
+  <% @acc.each do |pet| %>
+    <section id="Pet-<%=pet.id %>">
+      <h3><%= pet.name%></h3><br>
+      <img style="width:40vw" src="<%= pet.image %>">
+      <%= button_to "Apply to Adopt", "/applications/new", method: :get %>
+    </section>
+  <%end%>
 <%end%>

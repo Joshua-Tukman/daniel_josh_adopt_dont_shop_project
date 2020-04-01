@@ -21,5 +21,4 @@ class Favorites
     end
     pet_acc
   end
-
 end

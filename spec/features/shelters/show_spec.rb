@@ -18,14 +18,5 @@ RSpec.describe "shelter show page", type: :feature do
     expect(page).to have_content(shelter1.state)
     expect(page).to have_content(shelter1.zip)
     end
-  end 
+  end
 end
-
-# As a visitor
-# When I visit '/shelters/:id'
-# Then I see the shelter with that id including the shelter's:
-# - name
-# - address
-# - city
-# - state
-# - zip

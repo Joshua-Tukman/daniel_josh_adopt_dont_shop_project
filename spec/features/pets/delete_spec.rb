@@ -17,7 +17,7 @@ RSpec.describe "delete a pet" do
                                     status: true)
 
             visit "/pets/#{pet1.id}"
-            
+
             click_on "Delete Pet"
 
             expect(current_path).to eq("/pets")
@@ -25,11 +25,3 @@ RSpec.describe "delete a pet" do
         end
     end
 end
-
-# As a visitor
-# When I visit a pet show page
-# Then I see a link to delete the pet "Delete Pet"
-# When I click the link
-# Then a 'DELETE' request is sent to '/pets/:id',
-# the pet is deleted,
-# and I am redirected to the pet index page where I no longer see this pet

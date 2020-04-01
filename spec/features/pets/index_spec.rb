@@ -64,12 +64,3 @@ RSpec.describe "pets index page", type: :feature do
     end
   end
 end
-
-# As a visitor
-# When I visit '/pets'
-# Then I see each Pet in the system including the Pet's:
-# - image
-# - name
-# - approximate age
-# - sex
-# - name of the shelter where the pet is currently located

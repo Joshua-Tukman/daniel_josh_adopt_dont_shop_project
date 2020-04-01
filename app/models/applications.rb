@@ -1,5 +1,5 @@
 class Applications < ApplicationRecord
-    # validates_presence_of :name, :address, :city, :state, :zip, :phone, :qualifications
+    validates_presence_of :name, :address, :city, :state, :zip, :phone, :qualifications
     has_many :pet_applications
     has_many :pets, through: :pet_applications
 end

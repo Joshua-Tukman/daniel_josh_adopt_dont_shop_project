@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
 
   def new
+    # binding.pry
     @shelter = Shelter.find(params[:shelter_id])
   end
 

@@ -8,6 +8,7 @@ class FavoritesController < ApplicationController
   end
 
   def index
+    # binding.pry
     @acc = favorites.pet_collection
   end
 

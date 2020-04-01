@@ -9,6 +9,7 @@
     <section id="Pet-<%=pet.id %>">
       <h3><%= pet.name%></h3><br>
       <img style="width:40vw" src="<%= pet.image %>">
+      <%= button_to "Apply to Adopt", "/applications/new", method: :get %>
     </section>
   <%end%>
 <%end%>
